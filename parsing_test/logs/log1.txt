@@ -1,0 +1,141 @@
+INFO  RiskManagementRequest: {"TransactionDateTime":"260605101720","Card":{"Pan":"********","IsPresent":true,"P2pe":{"Ksn":"","Bitmap":""},"FallBackIndicator":false,"ExpiryDate":"311231","Track2":"****************"},"Transaction":{"RequestedAmount":{"Amount":"000000001000","Currency":"EUR"},"AcquirerId":"00001000601","ContractNumber":"7654321","Nlsa":"213","MerchantUid":"aeac844d-b035-4abb-b32d-9f67e3d9b216","AuthorizationReason":["TerminalForced","FloorLimit"],"EmvFields":[{"Tag":"9F33","Value":"606840"},{"Tag":"9C","Value":"00"},{"Tag":"9F35","Value":"22"},{"Tag":"5F24","Value":"311231"},{"Tag":"50","Value":"5649534120435245444954"},{"Tag":"95","Value":"0000000000"},{"Tag":"9F34","Value":"000000"},{"Tag":"4F","Value":"A0000000031010"},{"Tag":"82","Value":"0020"},{"Tag":"9F26","Value":"3E79CCA90CE5B4E9"},{"Tag":"9F27","Value":"80"},{"Tag":"5F34","Value":"01"},{"Tag":"9F0D","Value":"0000000000"},{"Tag":"9F0E","Value":"0000000000"},{"Tag":"9F0F","Value":"0000000000"},{"Tag":"9F07","Value":"0200"},{"Tag":"9F10","Value":"06011203A000000F00564953414C335445535443415345"},{"Tag":"9F36","Value":"0001"},{"Tag":"9F37","Value":"0C063CD8"},{"Tag":"5F28","Value":"0826"},{"Tag":"9F06","Value":"A0000000031010"},{"Tag":"9F6B","Value":"****************"},{"Tag":"5F2D","Value":"656E657366726465"},{"Tag":"9A","Value":"260605"},{"Tag":"9F66","Value":"34A04000"},{"Tag":"9F7C","Value":"010412345678"}],"CbFields":[{"Tag":"FF0D","Value":"0000880000"},{"Tag":"FF0E","Value":"B000C00000"},{"Tag":"FF0F","Value":"0000008800"},{"Tag":"EFC4","Value":"11"},{"Tag":"DF96","Value":"3000"},{"Tag":"DF97","Value":"31303000"},{"Tag":"EFD8","Value":"0114"},{"Tag":"DF93","Value":"03"},{"Tag":"DF85","Value":"0000048000"},{"Tag":"DF81","Value":"02"},{"Tag":"DF86","Value":"9F6E0421000000"},{"Tag":"DF68","Value":"03"}],"UserData":"ECR-00213213-20260603-1296                                      ","TransactionUuid":"364555b1-f029-40aa-83a7-b91e995ac0cc","EntryMode":"ContactlessChip","TransactionRef":"000024","BinStatus":"ACCEPTED","JcbLegacy":false,"RefundOnline":false},"Poi":{"EcrNumber":"99999999","PosName":"00213213"}}
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] Start processing CustomerID='16465' TransactionType='debit'
+DEBUG  Start fetching contract for Merchant_uid: aeac844d-b035-4abb-b32d-9f67e3d9b216
+DEBUG  Completed fetching contract for Merchant_uid: aeac844d-b035-4abb-b32d-9f67e3d9b216. Duration: 0 ms
+DEBUG  Completed get of tables for Merchant_uid: 'aeac844d-b035-4abb-b32d-9f67e3d9b216'. Duration: 0 ms
+DEBUG  [7889782b-8e4a-4c89-9ccc-f9336fa531ac] Floor Limit for currency 'EUR' is 0
+DEBUG  [7889782b-8e4a-4c89-9ccc-f9336fa531ac] Cumulative amount before purchase: 100
+DEBUG  [7889782b-8e4a-4c89-9ccc-f9336fa531ac] Cumulative amount after purchase: 1100, Floor limit: 0, Excess: true
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] E2E Tokenization option : 3
+DEBUG  libaxtokencatchup: process request to gts called with url /tokenserver/merchants/AXIS/16465/tokens with correlation id (transaction identifier) 364555b1-f029-40aa-83a7-b91e995ac0cc
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] Token fetched successfully for Customer_ID : 16465 4176130042266192 605E42557658126604530013635054425B5042463B1C55170E0D4F6611031E44
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] IINE : 41766622
+ WARN  [364555b1-f029-40aa-83a7-b91e995ac0cc] Bin Analysis : Unable to retreive Bin Extended ret : -1, Customer_ID : 16465
+ INFO  RiskManagementResponse: {"Transaction":{"CumulativeAmountExcess":true,"TransactionUuid":"364555b1-f029-40aa-83a7-b91e995ac0cc","DenyListLevel":"NOT_PRESENT","TransactionRef":"000024"},"Token":[{"TokenType":"GENERATED","TokenValue":"4176130042266192"},{"TokenType":"COMPUTED","TokenValue":"605E42557658126604530013635054425B5042463B1C55170E0D4F6611031E44"}],"OriginalTransaction":{"ApprovalStatus":"Approved","AcqTrxId":"","AuthorizationValue":"","ForcingMode":"","AppliCryptogram":""},"ReferenceData":"{\"CardHolderTotalAmount\":\"11.00\"}"}
+ INFO  HTTPStatus=200, PSDATA : ret=0, PSDCNX : ret=0
+ INFO  AuthorizationRequest: {"TransactionDateTime":"260605101720","Card":{"Pan":"********","IsPresent":true,"ExpiryDate":"311231","PinControled":"0","PinData":{"EncryptedPinData":"757761E78892A2B8","PinFormat":"isoFormat0","EncryptedPinKsn":"FEDCBA98762BF4C00A8A"},"LanguagePreference":"enesfrde","P2pe":{"Ksn":"","Bitmap":""},"Track2":"****************"},"CardHolder":{"IsPresent":true,"VerifyMethod":"OnlinePIN"},"Transaction":{"RequestedAmount":{"Amount":"000000001000","Currency":"EUR"},"PointOfServiceCondition":"0","AuthorizationReason":["FloorLimit"],"FallBackIndicator":false,"ForcingMode":"NO_FORCED","MicroCircuitIncident":"11","EntryMode":"ContactlessChip","PinEntryCapability":"PinEnrty","ApplicationSelection":"Default","BrandSelected":"","AcquirerId":"00001000601","ContractNumber":"7654321","Nlsa":"213","MerchantUid":"aeac844d-b035-4abb-b32d-9f67e3d9b216","EmvFields":[{"Tag":"9F33","Value":"606840"},{"Tag":"9C","Value":"00"},{"Tag":"9F35","Value":"22"},{"Tag":"5F24","Value":"311231"},{"Tag":"50","Value":"5649534120435245444954"},{"Tag":"95","Value":"0000000000"},{"Tag":"9F34","Value":"000000"},{"Tag":"4F","Value":"A0000000031010"},{"Tag":"82","Value":"0020"},{"Tag":"9F26","Value":"3E79CCA90CE5B4E9"},{"Tag":"9F27","Value":"80"},{"Tag":"5F34","Value":"01"},{"Tag":"9F0D","Value":"0000000000"},{"Tag":"9F0E","Value":"0000000000"},{"Tag":"9F0F","Value":"0000000000"},{"Tag":"9F07","Value":"0200"},{"Tag":"9F10","Value":"06011203A000000F00564953414C335445535443415345"},{"Tag":"9F36","Value":"0001"},{"Tag":"9F37","Value":"0C063CD8"},{"Tag":"5F28","Value":"0826"},{"Tag":"9F06","Value":"A0000000031010"},{"Tag":"9F6B","Value":"****************"},{"Tag":"5F2D","Value":"656E657366726465"},{"Tag":"9A","Value":"260605"},{"Tag":"9F66","Value":"34A04000"},{"Tag":"9F7C","Value":"010412345678"}],"CbFields":[{"Tag":"FF0D","Value":"0000880000"},{"Tag":"FF0E","Value":"B000C00000"},{"Tag":"FF0F","Value":"0000008800"},{"Tag":"EFC4","Value":"11"},{"Tag":"DF96","Value":"3000"},{"Tag":"DF97","Value":"31303000"},{"Tag":"EFD8","Value":"0114"},{"Tag":"DF93","Value":"03"},{"Tag":"DF85","Value":"0000048000"},{"Tag":"DF81","Value":"02"},{"Tag":"DF86","Value":"9F6E0421000000"},{"Tag":"DF68","Value":"03"}],"UserData":"ECR-00213213-20260603-1296                                      ","RetreivalReferenceNumber":"ECR-00213213","TransactionUuid":"364555b1-f029-40aa-83a7-b91e995ac0cc","TransactionRef":"000024","SingleTap":true,"AcqTrxId":"","PinEntered":"0","JcbLegacy":false,"DeferredClearing":"00"},"Order":{"Origin":"Terminal"},"Poi":{"PosName":"00213213","EcrNumber":"99999999","AdditionalCardReadingCapability":"0","PointOfInteractionInformation":"0"},"ReferenceData":"{\"CardHolderTotalAmount\":\"11.00\"}"}
+DEBUG  libaxchub: send 'translate-pin' request to chub
+DEBUG  libaxchub: translate pin request to chub successful
+DEBUG  Parsed ksn : FEDCBA98762BF4C00A8A
+ INFO  [364555b1-f029-40aa-83a7-b91e995ac0cc] Raisons Auth : "FloorLimit"
+ INFO  Authorization : Connexion to center on #1 address asstro:18000  - TypeLigneAuto=22
+DEBUG  Authorization processed successfully, no immediate response sent to terminal.
+DEBUG  entering APPELAUTO...
+DEBUG  Completed get of tables for Merchant_uid: 'aeac844d-b035-4abb-b32d-9f67e3d9b216'. Duration: 0 ms
+DEBUG  next state in auth context is 0
+DEBUG  Current state is : 0 contexte.Code is : 531
+DEBUG  authContext.nextState is : 0
+DEBUG  Cb2aTriggers is : 1 previous state = 0 and current state = 0
+DEBUG  IPDU-CN:
+DEBUG  PI-05: CBcom v1.3, transactionnel, applicatif v1.6.10
+DEBUG  PI-06: 0400 (Max IPDU size: 1024 bytes)
+ INFO AXIS >>> HOST CN message, Length = 12, HEX    c2 0a 05 04 13 02 16 10 06 02 04 00
+ INFO AXIS >>> HOST CN message, Length = 12, ASCII  ............
+DEBUG  authContext.nextState is : 195
+DEBUG  entering APPELAUTO...
+DEBUG  Completed get of tables for Merchant_uid: 'aeac844d-b035-4abb-b32d-9f67e3d9b216'. Duration: 0 ms
+DEBUG  next state in auth context is 195
+DEBUG  Current state is : 195 contexte.Code is : 533
+ INFO  IPDU-AC:
+ INFO  PI-01: code 00 (ok)
+DEBUG  Cb2aTriggers is : 195 previous state = 0 and current state = 195
+ WARN  Transaction UUID [364555b1-f029-40aa-83a7-b91e995ac0cc] retrievalReferenceNumber has wrong type, it should ANP : 'ECR-00213213'
+DEBUG  Cumulative amount: 1100 add =11.00
+DEBUG  AID is missing in EMV data for Tpv Auto Partielle check(0,0)
+ INFO  message #0100 built
+ INFO  IPDU-DE:
+ INFO  PI-07: 01E8 (APDU length: 488)
+ INFO AXIS >>> HOST [364555b1-f029-40aa-83a7-b91e995ac0cc] message#0100, Length = 494, HEX    c1 04 07 02 01 e8 01 00 72 38 46 c1 00 c3 9b 20 10 2a 2a 2a 2a 2a 2a 2a 2a 00 00 00 00 00 00 00 10 00 06 05 08 17 42 00 00 24 10 17 20 06 05 99 99 00 71 00 01 00 12 0b 00 00 01 00 06 01 41 41 41 41 41 41 41 41 30 30 30 30 30 30 30 42 42 42 42 42 42 42 42 32 30 38 30 38 53 69 74 65 20 43 42 36 33 33 30 34 32 30 30 36 39 36 31 34 31 30 30 30 30 30 30 30 30 30 30 30 30 32 41 30 30 38 35 34 33 32 31 36 34 34 15 00 01 0a fe dc ba 98 76 2b f4 c0 0a 8a 00 02 05 02 80 00 06 04 09 78 08 75 77 61 e7 88 92 a2 b8 00 00 04 03 02 00 00 00 a7 5f 24 03 31 12 31 00 82 02 00 20 00 95 05 00 00 00 00 00 00 9c 01 00 9f 06 07 a0 00 00 00 03 10 10 9f 10 17 06 01 12 03 a0 00 00 0f 00 56 49 53 41 4c 33 54 45 53 54 43 41 53 45 9f 26 08 3e 79 cc a9 0c e5 b4 e9 9f 27 01 80 9f 33 03 60 68 40 9f 34 03 00 00 00 9f 35 01 22 9f 36 02 00 01 9f 37 04 0c 06 3c d8 9f 66 04 34 a0 40 00 9f 7c 06 01 04 12 34 56 78 df 68 01 03 df 85 05 00 00 04 80 00 df 86 07 9f 6e 04 21 00 00 00 00 57 10 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a df 80 01 00 df 81 01 02 46 00 19 0c 20 20 20 20 31 30 33 36 34 31 34 34 00 40 08 7e 04 00 00 00 00 00 00 5f 2d 02 65 6e 5f 2d 02 65 73 5f 2d 02 66 72 5f 2d 02 64 65 9f 0d 05 00 00 00 00 00 9f 0e 05 00 00 00 00 00 9f 0f 05 00 00 00 00 00 4d 01 01 02 15 10 01 02 01 26 02 00 01 10 02 01 06 10 76 21 60 00 01 02 02 04 01 11 10 04 02 03 02 02 13 02 04 02 02 13 02 05 02 02 50 02 07 06 00 00 00 00 11 00 02 0b 07 a0 00 00 00 42 20 10 02 15 06 17 76 21 41 50 03 08 05 02 00 0c
+ INFO AXIS >>> HOST [364555b1-f029-40aa-83a7-b91e995ac0cc] message#0100, Length = 494, ASCII  ........r8F.... .********.............B..$.. .....q...........AAAAAAAA0000000BBBBBBBB20808Site CB633042006961410000000000002A00854321644........v+.............x.uwa.............._$.1.1.... ..................................VISAL3TESTCASE.&.>y.......'...3.`h@.4.....5.".6....7...<..f.4.@..|....4Vx.h..............n.!....W.****************........F...    10364144.@.~......._-.en_-.es_-.fr_-.de........................M........&........v!`.......................P................B .....v!AP......
+ INFO  --------------- ISO8583 MSG DUMP ---------------
+ INFO  [000]  100
+ INFO  [002]  ****************
+ INFO  [003]  000000
+ INFO  [004]  000000001000
+ INFO  [007]  0605081742
+ INFO  [011]  000024
+ INFO  [012]  101720
+ INFO  [013]  0605
+ INFO  [018]  9999
+ INFO  [022]  071
+ INFO  [023]  001
+ INFO  [025]  00
+ INFO  [026]  12
+ INFO  [032]  00001000601
+ INFO  [041]  AAAAAAAA
+ INFO  [042]  0000000BBBBBBBB
+ INFO  [047]  0808Site CB633042006961410000000000002A00854321644
+ INFO  [048]  00010AFEDCBA98762BF4C00A8A0002050280000604
+ INFO  [049]  978
+ INFO  [052]  757761E78892A2B8
+ INFO  [053]  0000040302000000
+ INFO  [055]  5f240331123100820200200095050000000000009c01009f0607a00000000310109f101706011203a000000f00564953414c3354455354434153459f26083e79cca90ce5b4e99f2701809f33036068409f34030000009f3501229f360200019f37040c063cd89f660434a040009f7c06010412345678df680103df85050000048000df86079f6e0421000000005710****************df800100df810102
+ INFO  [056]  00190C2020202031303336343134340040087E040000000000005F2D02656E5F2D0265735F2D0266725F2D0264659F0D0500000000009F0E0500000000009F0F050000000000
+ INFO  [059]  0101021510010201260200011002010610762160000102020401111004020302021302040202130205020250020706000000001100020B07A0000000422010021506177621415003080502000C
+ INFO  ------------------------------------------------
+DEBUG  authContext.nextState is : 110
+DEBUG  entering APPELAUTO...
+DEBUG  Completed get of tables for Merchant_uid: 'aeac844d-b035-4abb-b32d-9f67e3d9b216'. Duration: 0 ms
+DEBUG  next state in auth context is 110
+DEBUG  Current state is : 110 contexte.Code is : 533
+ INFO  IPDU-DE:
+ INFO  PI-01: code 00 (ok)
+ INFO  PI-07: 010E (APDU length: 270)
+ INFO HOST >>> AXIS [364555b1-f029-40aa-83a7-b91e995ac0cc] message#0110, Length = 279, HEX    c1 07 01 01 00 07 02 01 0e 01 10 72 38 46 81 06 c2 8e 20 10 2a 2a 2a 2a 2a 2a 2a 2a 00 00 00 00 00 00 00 10 00 06 05 08 17 42 00 00 24 10 17 20 06 05 99 99 00 71 00 01 00 0b 00 00 01 00 06 01 30 38 31 37 34 32 31 30 41 41 41 41 41 41 41 41 30 30 30 30 30 30 30 42 42 42 42 42 42 42 42 3e 39 36 31 34 31 30 30 30 30 30 30 30 30 30 30 30 30 32 41 30 30 38 35 34 33 32 31 36 34 34 30 38 30 38 53 69 74 65 20 43 42 36 39 35 31 36 31 41 32 30 32 36 30 36 30 35 30 38 31 37 34 32 09 78 00 00 04 03 02 00 00 00 14 30 30 35 37 39 37 38 43 30 30 30 30 30 30 30 30 31 30 30 30 19 00 91 08 40 e6 47 cc 00 80 00 00 5f 24 03 31 12 31 df 80 01 00 df 81 01 02 3f 01 01 02 15 10 01 02 01 26 02 00 01 10 02 01 06 10 76 21 60 00 01 02 02 04 01 11 10 04 02 03 02 02 13 02 04 02 02 13 02 05 02 02 50 02 07 06 00 00 00 00 11 00 02 0b 07 a0 00 00 00 42 20 10
+ INFO HOST >>> AXIS [364555b1-f029-40aa-83a7-b91e995ac0cc] message#0110, Length = 279, ASCII  ...........r8F.... .********.............B..$.. .....q..........08174210AAAAAAAA0000000BBBBBBBB>961410000000000002A008543216440808Site CB695161A20260605081742.x.........0057978C000000001000....@.G....._$.1.1........?........&........v!`.......................P................B .
+ INFO  --------------- ISO8583 MSG DUMP ---------------
+ INFO  [000]  0110
+ INFO  [002]  ****************
+ INFO  [003]  000000
+ INFO  [004]  000000001000
+ INFO  [007]  0605081742
+ INFO  [011]  000024
+ INFO  [012]  101720
+ INFO  [013]  0605
+ INFO  [018]  9999
+ INFO  [022]  071
+ INFO  [023]  001
+ INFO  [025]  00
+ INFO  [032]  00001000601
+ INFO  [038]  081742
+ INFO  [039]  10
+ INFO  [041]  AAAAAAAA
+ INFO  [042]  0000000BBBBBBBB
+ INFO  [047]  961410000000000002A008543216440808Site CB695161A20260605081742
+ INFO  [049]  978
+ INFO  [053]  0000040302000000
+ INFO  [054]  0057978C000000001000
+ INFO  [055]  00910840e647cc008000005f2403311231df800100df810102
+ INFO  [059]  0101021510010201260200011002010610762160000102020401111004020302021302040202130205020250020706000000001100020B07A0000000422010
+ INFO  ------------------------------------------------
+DEBUG  validating message #110
+ INFO  message 0110 validated
+DEBUG  current state is : 110, trigger is : -1
+DEBUG  Cb2aTriggers is : -1 previous state = 0 and current state = 110
+DEBUG  authContext.nextState is : 100
+ INFO  [364555b1-f029-40aa-83a7-b91e995ac0cc] Sent disconnect to Host successfully.
+ INFO  AuthorizationResponse: {"Transaction":{"TransactionRef":"000024","AuthorizationValue":"081742","AuthorizationResponseCode":"10","AcquirerResponseCode":"10","TransactionStatus":"Approved","ApprovedAmount":{"Amount":"000000001000","Currency":"EUR"},"AccptPointMsg":{"Destination":"","Message":""},"EmvFields":[{"Tag":"91","Value":"@\u00e6G\u00cc\u0000\u0080\u0000\u0000"},{"Tag":"5F24","Value":"1\u00121"},{"Tag":"DF80","Value":"\u0000"},{"Tag":"DF81","Value":"\u0002"}],"TransactionUuid":"364555b1-f029-40aa-83a7-b91e995ac0cc","RetreivalReferenceNumber":"ECR-00213213","PhoneNumber":"","AuthorizationDateTime":"20260605081742","AcqTrxId":"1A20260605081742"},"ReferenceData":"{\"CardHolderTotalAmount\":\"11.00\"}"}
+ INFO  HTTPStatus=200, PSDATA : ret=0, PSDCNX : ret=0
+ INFO  Processing message type: record, CustomerID='00016465', RequestUuid='de736962-8c8f-422f-ae36-6f3635ae2c09', TransactionType='fail' avroVersion=1, avroCompression=null
+ INFO  RecordingRequest: {"TransactionDateTime":"260605101720","Token":[{"TokenType":"GENERATED","TokenValue":"4176130042266192"},{"TokenType":"COMPUTED","TokenValue":"605E42557658126604530013635054425B5042463B1C55170E0D4F6611031E44"}],"Card":{"Pan":"********","IsPresent":true,"PinControled":"0","ExpiryDate":"311231","LanguagePreference":"enesfrde","P2pe":{"Ksn":"","Bitmap":""},"Track2":"****************"},"CardHolder":{"IsPresent":true,"VerifyMethod":"OnlinePIN"},"Transaction":{"RequestedAmount":{"Amount":"000000001000","Currency":"EUR"},"ApprovedAmount":{"Amount":"000000001000","Currency":"EUR"},"FinalAmount":{"Amount":"000000001000","Currency":"EUR"},"CharityAmount":{"Amount":"","Currency":""},"PointOfServiceCondition":"0","AuthorizationReason":["FloorLimit"],"TransactionRef":"000024","AuthorizationEntity":"ACQUIRER","ForcingMode":"NO_FORCED","OriginalTransactionType":"DEBIT","MicroCircuitIncident":"17","OfflineMode":"0","FallBackIndicator":false,"EntryMode":"ContactlessChip","PinEntryCapability":"PinEnrty","ApplicationSelection":"Default","BrandSelected":"VISA Debit","AcquirerId":"00001000601","ContractNumber":"7654321","Nlsa":"213","MerchantUid":"aeac844d-b035-4abb-b32d-9f67e3d9b216","AuthorizationValue":"081742","AuthorizationResponseCode":"10","AcquirerResponseCode":"10","TransactionStatus":"Declined","UserData":"ECR-00213213-20260603-1296                                      ","RetreivalReferenceNumber":"ECR-00213213","AccptPointMsg":{"Destination":"","Message":""},"CardholderReceipt":"     CARTE BANCAIRE     \n      SANS CONTACT      \nWORLDLINE               \n                        \n  \n      SANS CONTACT      \nA0000000031010\nVISA Debit \nLE 05/06/26 A 10:17:20\nTOUR VOLTAIRE       1 \nPLACE DES DEGRES  92800 \nPUTEAUX       \nABANDON  DEBIT\n1111004\n00601\n10000000000002\n************1192\n213 213 000024\nC   @ \nNo AUTO :081742\nREF : 1A20260605081742 \nMONTANT \n               10,00 EUR\n      TICKET CLIENT     \n       A CONSERVER\nMERCI AU REVOIR         \n                        \n  \n","AuthorizationDateTime":"20260605081742","EmvFields":[{"Tag":"9F33","Value":"606840"},{"Tag":"9C","Value":"00"},{"Tag":"9F35","Value":"22"},{"Tag":"5F24","Value":"311231"},{"Tag":"50","Value":"5649534120435245444954"},{"Tag":"95","Value":"0000000000"},{"Tag":"9F34","Value":"000002"},{"Tag":"4F","Value":"A0000000031010"},{"Tag":"82","Value":"0020"},{"Tag":"9F26","Value":"3E79CCA90CE5B4E9"},{"Tag":"9F27","Value":"80"},{"Tag":"5F34","Value":"01"},{"Tag":"9F0D","Value":"0000000000"},{"Tag":"9F0E","Value":"0000000000"},{"Tag":"9F0F","Value":"0000000000"},{"Tag":"9F07","Value":"0200"},{"Tag":"9F10","Value":"06011203A000000F00564953414C335445535443415345"},{"Tag":"9F36","Value":"0001"},{"Tag":"9F37","Value":"0C063CD8"},{"Tag":"5F28","Value":"0826"},{"Tag":"9F06","Value":"A0000000031010"},{"Tag":"9F6B","Value":"****************"},{"Tag":"5F2D","Value":"656E657366726465"},{"Tag":"9A","Value":"260605"},{"Tag":"9F66","Value":"34A04000"},{"Tag":"9F7C","Value":"010412345678"}],"CbFields":[{"Tag":"FF0D","Value":"0000880000"},{"Tag":"FF0E","Value":"B000C00000"},{"Tag":"FF0F","Value":"0000008800"},{"Tag":"FF50","Value":"45"},{"Tag":"EFC4","Value":"17"},{"Tag":"0809","Value":"01"},{"Tag":"DF73","Value":"02"},{"Tag":"DF96","Value":"3000"},{"Tag":"DF97","Value":"353030"},{"Tag":"EFD8","Value":"0114"},{"Tag":"DF93","Value":"03"},{"Tag":"DF85","Value":"0000048000"},{"Tag":"DF81","Value":"02"},{"Tag":"DF86","Value":"9F6E0421000000"},{"Tag":"DF68","Value":"03"}],"TransactionUuid":"364555b1-f029-40aa-83a7-b91e995ac0cc","MerchantReceipt":"*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************","AcqTrxId":"1A20260605081742","PinEntered":"0","JcbLegacy":true,"DeferredClearing":"00","TicketNumber":""},"Order":{"Origin":"Terminal"},"Poi":{"PosName":"00213213","EcrNumber":"99999999","AdditionalCardReadingCapability":"0","PointOfInteractionInformation":"0"},"ReferenceData":"{\"CardHolderTotalAmount\":\"11.00\"}"}
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] Start processing CustomerID='16465' TransactionType='fail'
+DEBUG  Start fetching contract for Merchant_uid: aeac844d-b035-4abb-b32d-9f67e3d9b216
+DEBUG  Completed fetching contract for Merchant_uid: aeac844d-b035-4abb-b32d-9f67e3d9b216. Duration: 0 ms
+DEBUG  Completed get of tables for Merchant_uid: 'aeac844d-b035-4abb-b32d-9f67e3d9b216'. Duration: 0 ms
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] Found POS acquirer data for POS ID 58937983 ITP=177621415003
+DEBUG  [364555b1-f029-40aa-83a7-b91e995ac0cc] IINE : 41766622
+ INFO  ErrorManager : No result for bin : 417666**, getBinDetails, /builds/axiscode/ak/lib/libaxbin/src/binanalysismanager_impl.cpp (L.243)
+ WARN  [364555b1-f029-40aa-83a7-b91e995ac0cc] Bin Analysis : Unable to retreive Bin Extended ret : -1, Customer_ID : 16465
+ INFO  [364555b1-f029-40aa-83a7-b91e995ac0cc] Transaction already exists (id=16), updating existing record status = Declined hostResponseCode=10
+DEBUG  TransactionId 16 added to advice queue. Queue size is now 1
+DEBUG  TrnsManager::update: Field 'processing_code' changed from '000000' to '570000'
+DEBUG  TrnsManager::update: Field 'transaction_type' changed from 'debit' to 'fail'
+DEBUG  TrnsManager::update: Field 'jcb_legacy' changed from 'false' to 'true'
+DEBUG  TrnsManager::update: Field 'amount' changed from '000000000000' to '000000001000'
+DEBUG  TrnsManager::update: Field 'flag_lot' changed from '0' to '1'
+DEBUG  TrnsManager::update: Field 'reversal_status' changed from '0' to '1'
+ INFO  RecordingResponse: {"TransactionUuid":"364555b1-f029-40aa-83a7-b91e995ac0cc","ResponseCode":"000000","NextTransactionID":"000026"}
+ INFO  HTTPStatus=200, PSDATA : ret=0, PSDCNX : ret=0
+ INFO  Metrics [de736962-8c8f-422f-ae36-6f3635ae2c09, ], SQL:1; CBCOM:7; CB2A:N/A; GTS:N/A; P2PE:N/A; PinOnline:N/A; AVRO-encoding:N/A
+DEBUG  Releasing advice queue. Queue size is 1
+ INFO  Sending advice for transactionId=16
